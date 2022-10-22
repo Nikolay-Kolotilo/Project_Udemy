@@ -23,12 +23,7 @@
 
 'use strict';
 
-if (typeof (numberOfFilms) == 'number') {
-    
-}
-console.log(typeof (numberOfFilms))
-
-const numberOfFilms = +prompt('сколько фильмов вы уже просмотрели?',);
+const numberOfFilms = +prompt('сколько фильмов вы уже просмотрели?', '');
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -36,14 +31,38 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
-const   lastFilm = prompt('Один из последних просмотренных фильмов', ''),
-        gradeOfLastFilm = +prompt('На сколько оцените его', ''),
-        lastFilm2 = prompt('Один из последних просмотренных фильмов', ''),
-        gradeOfLastFilm2 = +prompt('На сколько оцените его', '');
-personalMovieDB.movies[lastFilm] = gradeOfLastFilm;
-personalMovieDB.movies[lastFilm2] = gradeOfLastFilm2;
+
+// Вопросы пользователю про фильмы
+for (let i = 0; i < 2; i++) {
+    let lastFilm = prompt('Один из последних просмотренных фильмов', ''),
+        gradeOfLastFilm = +prompt('На сколько оцените его', '');
+    if (lastFilm != null && gradeOfLastFilm != null &&
+        lastFilm != '' && gradeOfLastFilm != '' && lastFilm.length < 50) {
+        personalMovieDB.movies[lastFilm] = gradeOfLastFilm;
+        console.log('Done');
+    } else {
+        console.log('Eror');
+        i--;
+    }    
+}
+if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else {
+    if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+        console.log("Вы классический зритель");
+    } else {
+        if (personalMovieDB.count >= 30) {
+            console.log("Вы киноман");
+        } else {
+            console.log("Произошла ошибка");
+        }
+    }
+}
+        
+
 
 console.log(personalMovieDB);
+console.log(typeof(gradeOfLastFilm));
 
 /* Практика 2
 Задание на урок:
@@ -60,5 +79,3 @@ console.log(personalMovieDB);
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 // Код возьмите из предыдущего домашнего задания
-
-
