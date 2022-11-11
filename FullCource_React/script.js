@@ -11,7 +11,7 @@ const cola = 0;
 const nuggets = 2;
  
 if (hamburger || cola || fries === 3 || nuggets) {
-   console.log('Done!')
+    console.log('Done!');
 }
 
 let hamburger;
@@ -20,14 +20,13 @@ const cola = 0;
 const nuggets = 2;
  
 if (hamburger && cola || fries === 3 && nuggets) {
-   console.log('Done!')
+    console.log('Done!');
 }
 console.log(5 === 5 && 3 > 1 || 5);
 
 // Задача - треугольник звездочек
 
-    let brick = '';
-
+let brick = '';
 for (let i = 0; i < 6; i++) {
     // brick = brick + '*';
 
@@ -38,10 +37,9 @@ for (let i = 0; i < 6; i++) {
 // Упражнение по написанию кода 3: Задания на использование циклов и условий.
 //     task #1
 for (let j = 0; j < array.length; j++) {
-        const element = array[j];
-        index
-}
-    
+    const element = array[j];
+    index;
+}    
 
 let homeworkFirst = 4;
 for (let i = 0; i <= 5; i++) {
@@ -49,12 +47,12 @@ for (let i = 0; i <= 5; i++) {
     console.log(homeworkFirst);
     }    
 // Task #2
-    let homeworkFirst = 21;
+let homeworkFirst = 21;
 stopCycle: for (let i = 0; i < 11; i++) {
     homeworkFirst = homeworkFirst - 1;
     if (homeworkFirst == 13) break stopCycle;
     console.log(homeworkFirst);
-    }  
+}  
 
 // Task #3
 let homeworkFirst = 0;
@@ -1077,14 +1075,175 @@ function sortStudentsByGroups(arr) {
 /*Вопрос из теста №1:
 
 Что будет содержаться в переменной result после завершения кода?
-
-    function foo(a,b) {
-        const [first] = a;
-        const {eng} = b;
+*/
+function foo(a,b) {
+    const [first] = a;
+    const {eng} = b;
+    console.log(first);
+    return `${first} ${eng}`;
+}  
      
-        return `${first} ${eng}`;
+const result = foo(['Hello', 'Привет'], { ru: 'Мир', eng: 'World' });
+// Hello World
+
+
+// 41. Задачи с собеседований на понимание основ
+console.log(typeof ([] + 1));
+[ ] + false - null + true ? 	//<--- 2. Чему равно такое выражение? Массив равен пустой строке лекция #41, время 3:30.
+
+2 && 1 && null && 0 && undefined;
+console.log(2 && 1 && null && 0 && undefined);
+
+
+console.log   (a && b);//  a is not defined
+console.log(!!(a && b));// a is not defined
+
+console.log(!!('b' && '')); //false
+console.log   ('b' && '');//''
+
+
+a = [1, 2, 3];
+b = [1, 2, 3]; 
+console.log(a == b);	//false
+console.log("Ёжик" > "яблоко");	//false Ё меньше я.
+console.log(0 || "" || 2 || undefined || true || falsе);	//2
+
+/*Задания на поиск ошибок в коде. Упражнение №15.
+В этом упражнении мы с вами потренируемся находить ошибки и неточности в коде. 
+Дебаг (поиск ошибок, debug) - очень важный навык любого программиста. 
+И чем лучше вы им будете владеть, тем легче будет вам в первую очередь.
+Мы уже разобрали один из важнейших инструментов для поиска ошибок у 
+front-end разработчиков - это консоль разработчика прямо в браузере. 
+Да, позже будут еще наслаиваться инструменты, но это один из основных. 
+Не забывайте его использовать и внимательно читайте те сообщения, которые выводятся. 
+Ведь все это было создано разработчиками для разработчиков, чтобы вам было проще. 
+Ну и никто не отменяет древний метод поиска ошибок - вывод через console.log(). 
+Но это только пока вы новичок :)
+Вы можете сначала решить у себя в редакторе кода, а потом вставить сюда. 
+Всю информацию для решения мы проходили в предыдущих уроках.
+Задание:
+У вас есть объект с данными о ресторане. Начинающий разработчик создал несколько функций, 
+которые работают неправильно и он не может понять почему. 
+Нужно исправить функции так, чтобы они давали всегда правильный результат.
+1) Функция isOpen не хочет правильно работать. Что мы уже не пробовали подставлять в неё - 
+результат все время неправильный. Необходимо найти причины и исправить.
+2) Функция isAverageLunchPriceTrue должна брать цены двух любых блюд из меню, 
+складывать их и сравнивать с средним чеком (averageLunchPrice).
+Сейчас функция работает, но постоянно выдает неправильный результат. 
+Ведь из представленного меню сумма двух любых цен всегда будет больше 20. 
+Необходимо найти причину и исправить.
+3) Функция transferWaitors создана для того, чтобы копировать шаблон данных и передавать их в другой ресторан. 
+Конечно, в другом ресторане будут другие блюда, другие официанты и тп. 
+Сейчас эта функция только в начале разработки и должна менять данные про официантов.
+Но в нынешнем виде мы обнаружили, что после её запуска не только копия данных содержит новых официантов, 
+но и основные данные! В restorantData сотрудник Alice исчезает и заменяется Mike! 
+Необходимо найти причину и немедленно исправить, чтобы данные были разделены.
+P.S. Может показаться сложным, но задача решается очень просто, если вы помните один принцип :)*/
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Закрыто' : answer = 'Открыто';
+    return anwser;
+}
+console.log(isOpen(openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (+fDish.price.slice(0, -1) + (sDish.price) < average) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
     }
-     
-    const result = foo(['Hello', 'Привет'], {ru: 'Мир', eng: 'World'})*/
+}
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
 
-    
+    copy.waitors[0] = {name: 'Mike', age: 32};
+    return copy;
+}
+transferWaitors(restorantData);
+
+/*Задания на написание кода. Упражнение №16 Реккурсия.
+(*) Задача на рекурсию
+Здесь мы с вами рассмотрим одну из классических задач на рекурсию, 
+которую дают на собеседованиях. Звучит она очень просто:
+Напишите функцию, которая вычисляет факториал.
+Задание простое, но нужно понимать что такое факториал вообще. 
+Факториал  – это число, умноженное на "себя минус один", затем на "себя минус два", 
+и так далее до 1. Факториал n обозначается как n!
+Отсюда мы можем понять, что функция должна принимать 1 аргумент, 
+который будет являться числом. Будет неплохо, если вы на собеседовании сразу 
+напишите проверку на приходящее значение :) 
+Поэтому, если в нашу функцию приходит дробное число или не число  - 
+возвращается строка с любым сообщением на ваше усмотрение. Если 0 и меньше - возвращается число 1.
+Сам же факториал с примерами выглядит вот так:
+n! = n * (n - 1) * (n - 2) * ...*1 - это общая формула
+Примеры значений для разных n:
+    1! = 1
+    2! = 2 * 1 = 2
+    3! = 3 * 2 * 1 = 6
+    4! = 4 * 3 * 2 * 1 = 24
+    5! = 5 * 4 * 3 * 2 * 1 = 120
+То есть, вызов нашей функции factorial(5) возвращает число 120
+factorial(4) => 24
+Решить задачу нужно через рекурсию. */
+// Моё решение:
+function factorial(n) {
+    if (n%1 !== 0 || typeof(n) !== 'number') {        
+        return 'Eror';
+    } else {
+        let total;
+        if (n == 1 || n <= 0) {
+            console.log('return 1');
+            return 1;
+        } else {
+            console.log(n);
+            total = n * factorial(n - 1);
+            return total;               
+        }        
+    }    
+}
+console.log(factorial(5));
+
+// Решение преподавателя:
+function factorial(n) {
+    if (typeof(n) !== 'number' || !Number.isInteger(n)) {
+        return "Ошибка, проверьте данные";
+    }
+    if (n >= 1) {
+        console.log(n); // Проверка внутренней работы
+        return n * factorial(n - 1);
+    } else {
+        console.log('return 1'); // Проверка внутренней работы
+        return 1;
+    }
+    // Более короткий вариант, который вы можете встретить
+    // Но не учитывает отрицательные значения
+    return n ? n * factorial(n - 1) : 1;
+}
+console.log(factorial(5));
+
