@@ -140,6 +140,7 @@ P.S. Функции вызывать не обязательно*/
 // Код возьмите из предыдущего домашнего задания
 
 
+/*
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -208,7 +209,7 @@ const personalMovieDB = {
     toggleVisibleMyDB: function () {
         personalMovieDB.privat ? personalMovieDB.privat = false : personalMovieDB.privat = true;        
     }
-};
+};*/
 // Проверка на отмену или пустую тхт
 //     checkData: function (inlet) {
 //     inlet === '' && inlet === null ? true : false;
@@ -221,7 +222,7 @@ const personalMovieDB = {
 // // Оценка пользователя
 // personalMovieDB.detectPersonalLevel();
 // Любимые жанры
-personalMovieDB.writeYourGenres();
+// personalMovieDB.writeYourGenres();
 // Условие приватности
 // personalMovieDB.showMyDB(personalMovieDB.privat);
 // // Переключатель приватности БД
@@ -232,5 +233,91 @@ personalMovieDB.writeYourGenres();
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"
 */
+
+
+
+
+
+/* Практика №5. Лекция № 48. Задания на урок:
+1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
+новый фильм добавляется в список. Страница не должна перезагружаться.
+Новый фильм должен добавляться в movieDB.movies.
+Для получения доступа к значению input - обращаемся к нему как input.value;
+P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
+2) Если название фильма больше, чем 21 символ - обрезать его и добавить три точки
+3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
+4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение: 
+"Добавляем любимый фильм"
+5) Фильмы должны быть отсортированы по алфавиту */
+
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    // // Вопросы пользователю про фильмы
+    start: function () {
+        personalMovieDB.count = +prompt('сколько фильмов вы уже просмотрели?', '');
+        while (personalMovieDB.count == null || personalMovieDB.count == '' || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('сколько фильмов вы уже просмотрели?', '');
+        }
+        return personalMovieDB.count;
+    },
+    // Последние просмотренные фильмы
+    rememberMyFilms: function () {
+        for (let i = 0; i < 2; i++) {
+            const lastFilm = prompt('Один из последних просмотренных фильмов', ''),
+                gradeOfLastFilm = +prompt('На сколько оцените его', '');
+            if (lastFilm != null && gradeOfLastFilm != null &&
+                lastFilm != '' && gradeOfLastFilm != '' && lastFilm.length < 50) {
+                personalMovieDB.movies[lastFilm] = gradeOfLastFilm;
+                console.log('Done');
+            } else {            
+                i--;
+                return console.log('Eror');
+            }    
+        }
+    },
+    // Оценка пользователя
+    detectPersonalLevel: function () {
+        if (personalMovieDB.count < 10) {
+            console.log('Просмотрено довольно мало фильмов');
+        } else {
+            if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+                console.log("Вы классический зритель");
+            } else {
+                if (personalMovieDB.count >= 30) {
+                    console.log("Вы киноман");
+                } else {
+                    console.log("Произошла ошибка");
+                }
+            }
+        }
+    },
+    // Любимые жанры
+    writeYourGenres: function () {        
+        let a;
+        for (let i = 1; i <= 3; i++) {
+            personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`, '');
+            personalMovieDB.genres[i - 1] === '' || personalMovieDB.genres[i - 1
+            ] === null ? i-- : personalMovieDB.genres[i - 1];            
+        }
+        personalMovieDB.genres.forEach((item, i) => {
+            a += `\nЛюбимый жанр #${i + 1} - это ${item}`;
+        });            
+        return console.log(a);
+    },
+    // Условие приватности
+    showMyDB:function (hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    // Переключатель приватности БД
+    toggleVisibleMyDB: function () {
+        personalMovieDB.privat ? personalMovieDB.privat = false : personalMovieDB.privat = true;        
+    }
+};
 
 console.log(personalMovieDB);
