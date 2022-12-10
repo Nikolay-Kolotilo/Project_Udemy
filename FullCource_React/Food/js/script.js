@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     ///// Timer.
     //Получение данных для таймера
-    const deadline = '2022-05-11';
+    const deadline = '2023-05-11';
     function getTimeRemeaning(endtime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endtime) - // Получим рез-т в мСек.
@@ -150,14 +150,81 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', showModalByCcroll);/*, () => {//Лекция 73. 3:50.
     }, {once: 'true'});//Лекция 73. 8:25.*/
- 
 
-    //// Лекция 79. Карточки продуктов.
-    class ProductCards {
-        constructor(width, height, ) {
 
+    //// Лекция 79. Карточки продуктов меню.
+            //Класс для удаления меню.
+    
+    class MenuCardDelete {
+        constructor(menuCardSelector) {
+            this.menuCardSelector = menuCardSelector;
+            this.menuItemIs = document.querySelectorAll(this.menuCardSelector);
+        }
+        del() {
+            console.log(this.menuItemIs);
+            this.menuItemIs.forEach(item => {
+                item.remove();
+            });
         }
     }
+    new MenuCardDelete('.menu__item').del();
+    
+            //Классы для карточек.
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parent = document.querySelector(parentSelector);
+            this.transfer = 27;
+            this.changeToUAN();            
+        }
+        changeToUAN() {
+            this.price = this.price * this.transfer;
+        }
+        render() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="menu__item">
+                    <img src=${this.src} alt=${this.alt}>
+                    <h3 class="menu__item-subtitle">${this.title}</h3>
+                    <div class="menu__item-descr">${this.title} - ${this.descr}</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                    </div>
+                </div>
+                `;
+            this.parent.append(element);
+        }
+    }
+    new MenuCard(
+        "img/tabs/vegy.jpg",
+        "vegy",
+        'Меню "Фитнес"',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        9,
+        '.menu .container'
+    ).render();
 
-
+    new MenuCard(
+        "img/tabs/elite.jpg",
+        "elite",
+        'Меню "Премиум"',
+        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+        20,
+        '.menu .container'
+    ).render();   
+    
+    new MenuCard(
+        "img/tabs/post.jpg",
+        "post",
+        'Меню "Премиум"',
+        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+        16,
+        '.menu .container'
+    ).render();        
 });
