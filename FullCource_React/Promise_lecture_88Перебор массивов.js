@@ -1,9 +1,11 @@
 'use strict';
 
-// filters 0:55
-
+/* filter 0:55. Метод filter() создаёт новый массив со всеми элементами,
+прошедшими проверку, задаваемую в передаваемой функции.
+Вернётся новый массив с элементами, которые прошли проверку. 
+Если ни один элемент не прошёл проверку, то будет возвращён пустой массив.
+*/
 const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart']; //2:00
-
 //2: 40
 const shortNames = names.filter(function (name) {
     return name.length < 5;  //Фильтр имен подлине имени 5
@@ -33,7 +35,7 @@ console.log(some.some(item => typeof(item) === 'number')); //есть ли в м
 //false если нет.
 const some = [4, 'qwq', 'dfgfdhg'];
 //12:10
-console.log(some.every(item => typeof(item) === 'number')); //есть ли в массиве хоть одно число?
+console.log(some.every(item => typeof(item) === 'number')); //если все элементы числа?
 
 // 13:50 reduce - Сбор массива в одно единое целое
 /*
@@ -71,7 +73,7 @@ const arr = [4, 5, 1, 3, 2, 6];
 const res = arr.reduce((sum, current) => sum + current, 3);// =24
 
 // 21:35 Практический пример.
-// 23:20  entries - Получение массива массивов
+// 23:20  entries - Получение массива массивов (строк объекта)
 
 const obj = {
     ivan: 'persone',
