@@ -20,8 +20,18 @@ Terminal: npn i json-server
     Terminal: npm i json-server --save-dev
 6:30 - Ключ для использования библиотек внутри проекта (Jqwery, React  и др.):
         --save  
-3:20
-3:20
-3:20
-3:20
+8:40 - Папку node_modules - не трогаем!!
+9:20. Размер папки node_modules может быть 500 Мб - особенности работы с Гит Хаб.
+      Gitignore.
+9:50. Удаление и установка папки node_modules
+      npm i - команда в терминал для установки сервера по файлу "package.json".
+11:15. package-lock.json 
+11:40. Работа с json-server.
+12:10. db.json - В нем записаны данные с карточек товара.
+12:50. Получение меню из db.json с помощью fetch
+15:00. Запуск json-server. 
+    Terminal: npx json-server db.json
+17:50. Получение массива на интернет странице при обращении к json-server db.json
+18:15. Важная информация по запуску серверов.
+
 */
