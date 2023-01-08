@@ -1,7 +1,7 @@
 'use strict';
 
-/*   Lec_93_Creating a slider on the site, option 1.
-0:00. Слайдер в виде галлереи.
+/*   Lec_93_Creating a slider on the site, option 2.
+0:00. Слайдер в виде карусели.
 0:45. Создание переменных.
 1:00. Изменение структуры HTML кода. Перемещение картинок внутрь вновь создаваемого div.
         
