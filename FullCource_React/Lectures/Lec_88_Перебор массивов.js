@@ -1,6 +1,7 @@
 'use strict';
-
-/* filter 0:55. Метод filter() создаёт новый массив со всеми элементами,
+                //*****************
+/*0:55. Метод filter() 
+создаёт новый массив со всеми элементами,
 прошедшими проверку, задаваемую в передаваемой функции.
 Вернётся новый массив с элементами, которые прошли проверку. 
 Если ни один элемент не прошёл проверку, то будет возвращён пустой массив.
@@ -13,7 +14,8 @@ const shortNames = names.filter(function (name) {
 //4:35
 console.log(shortNames);
 
-// 5:15 MAP
+                //***************
+// 5:15 Метод MAP
 const answers = ['IvAn', 'AnnA', 'Hello']; // 6:25 Получение имен без ошибок
 const result = answers.map(item => item.toLocaleLowerCase());
 //8:00
@@ -24,8 +26,8 @@ answers = answers.map(item => item.toLocaleLowerCase());
 //8:50
 console.log(answers);
 
-
-// 9:45 every/some
+                //********************                
+// 9:45 Метод every/some
 //some - перебирает массив и возвращает true если хоть один элемент подходит условию
 //false если нет.
 const some = [4, 'qwq', 'dfgfdhg'];
@@ -37,7 +39,8 @@ const some = [4, 'qwq', 'dfgfdhg'];
 //12:10
 console.log(some.every(item => typeof(item) === 'number')); //если все элементы числа?
 
-// 13:50 reduce - Сбор массива в одно единое целое
+                //********************                
+// 13:50 Метод reduce - Сбор массива в одно единое целое
 /*
 Синтаксис
 array.reduce(callback[, initialValue])
@@ -72,6 +75,7 @@ const arr = [4, 5, 1, 3, 2, 6];
 //             аргумент = 3;/ 2-й арг- элемент массива
 const res = arr.reduce((sum, current) => sum + current, 3);// =24
 
+                //********************           
 // 21:35 Практический пример.
 // 23:20  entries - Получение массива массивов (строк объекта)
 
