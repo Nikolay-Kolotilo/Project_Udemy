@@ -1,4 +1,4 @@
-/*Lec_125__React_Strict Mode
+/*Lec_125__React_Create a new project
         https://ru.reactjs.org/docs/strict-mode.html
 0:55. CRUD.  
         https://ru.wikipedia.org/wiki/CRUD
