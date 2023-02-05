@@ -9,7 +9,9 @@ function WhoAmI(props) { //props is an object.
                         <h1>My name is {props.name}, surname - {props.surname}</h1>
                         <a href={props.link}>My profile</a>
                 </div>
-        )}
+        )
+}
+        
 //5:00. Creating properties of props. props будет формироывться из атрибутов: 
                         //<WhoAmI name='John' surname='Smith' link='facebook.com' />
 function App() {
