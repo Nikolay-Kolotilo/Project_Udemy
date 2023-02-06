@@ -18,7 +18,7 @@ class WhoAmI extends Component() { //props is an object.
     }
     nextYear = () => {
         console.log('+++');
-        this.setstate(state => ({
+        this.setState(state => ({
             years: state.years + 1 //11:25
         }))
     }
@@ -52,6 +52,7 @@ function App() {
 //6:05. Динамическое изменение данных внутри компонентов, т.к. props ТОЛЬКО для чтения
             *******
 //6:25. Состояние. Для создания состояния и есть конструктор. this.state для описания динамических элементов.
+//8:15. Назначение события на кнопку. < button onClick = { this.nextYear } >
 //9:00. Создаем метод this.nextYear. Синтаксис - ОБЯЗАТЕЛЬНО только стрелочную функцию.                                                    
                                 //В классах работает ТОЛЬКО стрелочная функция.
 nextYear = () => {
