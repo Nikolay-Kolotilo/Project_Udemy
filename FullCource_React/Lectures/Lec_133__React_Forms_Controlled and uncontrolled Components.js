@@ -3,7 +3,7 @@
         https://ru.reactjs.org/docs/forms.html
 
 0:20. Отмена стандартного поведения. Только через  
-        eventPreventDefolt. 
+        eventPreventDefolt. - Иначе будет происходить перезагрузка страницы.
         onInput И onChange - будут вести себя идентично. 
 0:30. employees-add-form.js
 0:40. Переписаваем на классы EmployeesAddForm
