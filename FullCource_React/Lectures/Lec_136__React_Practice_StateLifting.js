@@ -158,6 +158,24 @@ const EmployeesListItem = (props) => {
 
 27:15. Data фтрибуты в React вместо методов onToggleRise и onToggleIncrease:
 30:15. ДЗ. Исправить начисление премий и лайков для пустых полей сотрудников.
+    addItem = (name, salary) => {
+        const newItem = {
+            name, 
+            salary,
+            increase: false,
+            rise: false,
+            id: this.maxId++
+        }
+        if (newItem.name.length > 3 && newItem.salary !== '') {
+            this.setState(({data}) => {
+            const newArr = [...data, newItem];
+            return {
+                data: newArr
+                }                
+            });               
+        }
+    }
+Дополнительное решение по работе печенек к пустым пользователям.
             data: data.map(item => {
                 if (item.id === id && item.name.length > 3) { // Решение: добавляем условие && item.name.length > 3
                     return {...item, [prop]: !item[prop]}
