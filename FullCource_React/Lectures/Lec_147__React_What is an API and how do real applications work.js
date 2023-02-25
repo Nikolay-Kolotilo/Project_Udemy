@@ -1,4 +1,4 @@
-/*Lec_146__React_Styles_Class fields and static.js
+/*Lec_147__React_Styles_Class fields and static.js
                 https://habr.com/ru/post/464261/            - Статья о понятии API
                 https://github.com/public-apis/public-apis  - репозиторий открытых API.
 
@@ -25,5 +25,4 @@
 10:35. API Погода.
 10:50. API Новости.
 11:15. API Репозиторий открытых API. Их надо тестировать, т.к. не все они работают, не все в формате JSON и не все на JS.
-
 */
