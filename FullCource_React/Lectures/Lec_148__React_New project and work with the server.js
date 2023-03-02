@@ -73,5 +73,11 @@ https://gateway.marvel.com:443/v1/public/characters?apikey=8d102c7c3676008f79d7
         _apiKey = 'apikey=*********';
 
 27:30. Редактируем метод getAllCharacters: 
+        getAllCharacters = () => {
+            return this.getResource(`${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`);
+        }
+        getCharacter = (id) => {
+            return this.getResource(`${this._apiBase}characters/${id}?${this._apiKey}`);
+        }
 
 */
